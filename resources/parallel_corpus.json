@@ -1,0 +1,145 @@
+{
+    "metadata": {
+        "version": "1.0.0",
+        "created": "2025-02-19",
+        "source": "满汉合璧文献整理",
+        "license": "CC BY-SA 4.0"
+    },
+    "sentences": [
+        {
+            "id": "1",
+            "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+            "chinese": "海的人",
+            "pinyin": "hǎi de rén",
+            "tags": ["地理", "人物"],
+            "source": "example",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "2",
+            "manchu": "ᠠᠯᡳᠨ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+            "chinese": "山的人",
+            "pinyin": "shān de rén",
+            "tags": ["地理", "人物"],
+            "source": "example",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "3",
+            "manchu": "ᡥᡡᠸᠠᠩᡩᡳ ᡳ ᡥᡝᡵᡤᡝᠨ",
+            "chinese": "皇帝的文字",
+            "pinyin": "huángdì de wénzì",
+            "tags": ["政治", "文化"],
+            "source": "example",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": "4",
+            "manchu": "bi bithe arambi",
+            "chinese": "我写书",
+            "pinyin": "wǒ xiě shū",
+            "tags": ["文学", "日常"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "5",
+            "manchu": "ere bithe sain",
+            "chinese": "这本书好",
+            "pinyin": "zhè běn shū hǎo",
+            "tags": ["文学", "评价"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "6",
+            "manchu": "amban ji-he",
+            "chinese": "大臣来了",
+            "pinyin": "dàchén lái le",
+            "tags": ["政治", "动作"],
+            "source": "history",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": "7",
+            "manchu": "morin feksin",
+            "chinese": "马跑得快",
+            "pinyin": "mǎ pǎo de kuài",
+            "tags": ["动物", "描述"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "8",
+            "manchu": "bi manju gisun tacimbi",
+            "chinese": "我学满语",
+            "pinyin": "wǒ xué mǎnyǔ",
+            "tags": ["教育", "语言"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "9",
+            "manchu": "ere gisun umesi sain",
+            "chinese": "这句话很好",
+            "pinyin": "zhè jù huà hěn hǎo",
+            "tags": ["语言", "评价"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "10",
+            "manchu": "manju bithe tacimbi",
+            "chinese": "学习满文",
+            "pinyin": "xué xí mǎnwén",
+            "tags": ["教育", "语言"],
+            "source": "textbook",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "11",
+            "manchu": "bi sikse bithe arambi",
+            "chinese": "我昨天写了书",
+            "pinyin": "wǒ zuótiān xiě le shū",
+            "tags": ["文学", "时间"],
+            "source": "conversation",
+            "difficulty": "intermediate"
+        },
+        {
+            "id": "12",
+            "manchu": "si aibe tacimbi",
+            "chinese": "你学什么",
+            "pinyin": "nǐ xué shénme",
+            "tags": ["教育", "疑问"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "13",
+            "manchu": "tere niyalma we",
+            "chinese": "那个人是谁",
+            "pinyin": "nà gè rén shì shéi",
+            "tags": ["人物", "疑问"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "14",
+            "manchu": "mini boode jimbi",
+            "chinese": "来我家",
+            "pinyin": "lái wǒ jiā",
+            "tags": ["日常", "邀请"],
+            "source": "conversation",
+            "difficulty": "beginner"
+        },
+        {
+            "id": "15",
+            "manchu": "ere bithe adarame arambi",
+            "chinese": "这本书怎么写",
+            "pinyin": "zhè běn shū zěnme xiě",
+            "tags": ["文学", "疑问"],
+            "source": "conversation",
+            "difficulty": "intermediate"
+        }
+    ]
+}

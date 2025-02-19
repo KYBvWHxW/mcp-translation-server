@@ -1,0 +1,106 @@
+{
+    "phonology": {
+        "vowels": ["a", "e", "i", "o", "u", "ū", "ā", "ē", "ī", "ō"],
+        "consonants": ["b", "p", "d", "t", "g", "k", "m", "n", "ng", "h", "s", "š", "r", "l", "y", "w", "f"],
+        "harmony_groups": {
+            "a_harmony": ["a", "o", "ā", "ō"],
+            "e_harmony": ["e", "u", "ē", "ū"],
+            "neutral": ["i", "ī"]
+        }
+    },
+    "morphology": {
+        "verb_classes": {
+            "regular": {
+                "suffixes": ["mbi", "ra", "ha", "fi", "me", "ki"],
+                "stem_changes": {
+                    "ra/re": "元音和谐",
+                    "ha/he": "元音和谐",
+                    "ka/ke": "元音和谐"
+                }
+            },
+            "irregular": {
+                "bi": {
+                    "present": "bi",
+                    "past": "bihe",
+                    "future": "bisire",
+                    "converb": "bime"
+                },
+                "o": {
+                    "present": "ombi",
+                    "past": "oho",
+                    "future": "oro",
+                    "converb": "ome"
+                }
+            }
+        },
+        "noun_classes": {
+            "regular": {
+                "case_suffixes": {
+                    "nominative": "",
+                    "genitive": "i",
+                    "accusative": "be",
+                    "dative": "de",
+                    "ablative": "ci",
+                    "instrumental": "i"
+                },
+                "number_suffixes": {
+                    "singular": "",
+                    "plural": "sa",
+                    "collective": "ri",
+                    "distributive": "si"
+                }
+            },
+            "pronouns": {
+                "personal": {
+                    "bi": {
+                        "nominative": "bi",
+                        "genitive": "mini",
+                        "accusative": "mimbe",
+                        "dative": "minde"
+                    },
+                    "si": {
+                        "nominative": "si",
+                        "genitive": "sini",
+                        "accusative": "simbe",
+                        "dative": "sinde"
+                    }
+                }
+            }
+        }
+    },
+    "syntax": {
+        "word_order": {
+            "basic": "SOV",
+            "modifiers": {
+                "adjectives": "before noun",
+                "numerals": "before noun",
+                "demonstratives": "before noun",
+                "genitives": "before noun"
+            }
+        },
+        "particles": {
+            "case": ["be", "de", "ci", "i"],
+            "aspect": ["mbi", "ha", "ra"],
+            "mood": ["ki", "cina", "kini"],
+            "conjunction": ["bime", "seme"]
+        }
+    },
+    "orthography": {
+        "scripts": {
+            "latin": {
+                "vowels": ["a", "e", "i", "o", "u", "ū", "ā", "ē", "ī", "ō"],
+                "consonants": ["b", "p", "d", "t", "g", "k", "m", "n", "ng", "h", "s", "š", "r", "l", "y", "w", "f"]
+            },
+            "mongolian": {
+                "initial_forms": {},
+                "medial_forms": {},
+                "final_forms": {}
+            }
+        },
+        "punctuation": {
+            "sentence_final": [".", "?", "!"],
+            "comma": [",", "、"],
+            "quotation": ["「", "」"]
+        }
+    }
+}

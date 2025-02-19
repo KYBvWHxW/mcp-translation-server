@@ -1,0 +1,36 @@
+{
+    "api": {
+        "host": "0.0.0.0",
+        "port": 8000,
+        "debug": false,
+        "workers": 4
+    },
+    "translation": {
+        "default_source_lang": "manchu",
+        "default_target_lang": "chinese",
+        "batch_size": 32,
+        "cache_size": 1000,
+        "timeout": 30
+    },
+    "resources": {
+        "rules_file": "resources/manchu_rules.json",
+        "dictionary_file": "resources/dictionary.json",
+        "corpus_file": "resources/parallel_corpus.json"
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "file": "logs/server.log"
+    },
+    "security": {
+        "rate_limit": 100,
+        "rate_window": 3600,
+        "require_auth": true,
+        "cors_origins": ["http://localhost:3000"]
+    },
+    "cache": {
+        "enabled": true,
+        "type": "redis",
+        "ttl": 86400
+    }
+}

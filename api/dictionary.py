@@ -7,46 +7,50 @@ from dataclasses import dataclass
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from .base import BaseComponent
 
 @dataclass
 class DictionaryEntry:
     """词典条目数据类"""
     word: str
     lexical: str
+    word_class: str
     suffixes: List[str]
     collocations: List[str]
     senses: List[Dict[str, str]]  # 多义词义项列表
     examples: List[Dict[str, str]]  # 用例列表
     
-class ManchuDictionary:
+class ManchuDictionary(BaseComponent):
     """满文词典类，支持模糊匹配和多义词处理"""
     
     def __init__(self, dictionary_path: str = "resources/dictionary.json"):
         self.entries: Dict[str, DictionaryEntry] = {}
         self.word_vectors = None
         self.vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 3))
+        self.ready = False
         
         # 加载词典
         if os.path.exists(dictionary_path):
             self._load_dictionary(dictionary_path)
             self._build_index()
+            self.ready = True
     
     def _load_dictionary(self, path: str):
         """加载词典数据"""
         with open(path, 'r', encoding='utf-8') as f:
             data = json.load(f)
             
-        for entry in data:
+        for word, entry_data in data.items():
             # 确保每个条目都有完整的字段
-            if isinstance(entry, dict) and 'word' in entry:
-                self.entries[entry['word']] = DictionaryEntry(
-                    word=entry['word'],
-                    lexical=entry.get('lexical', ''),
-                    suffixes=entry.get('suffixes', []),
-                    collocations=entry.get('collocations', []),
-                    senses=entry.get('senses', [{'meaning': entry.get('lexical', '')}]),
-                    examples=entry.get('examples', [])
-                )
+            self.entries[word] = DictionaryEntry(
+                word=word,
+                lexical=entry_data.get('lexical', ''),
+                word_class=entry_data.get('word_class', ''),
+                suffixes=entry_data.get('suffixes', []),
+                collocations=entry_data.get('collocations', []),
+                senses=entry_data.get('senses', [{'meaning': entry_data.get('lexical', '')}]),
+                examples=entry_data.get('examples', [])
+            )
     
     def _build_index(self):
         """构建搜索索引"""
@@ -159,4 +163,16 @@ class ManchuDictionary:
         return {
             'word': word,
             'match_type': 'not_found'
+        }
+        
+    def is_ready(self) -> bool:
+        """检查组件是否就绪"""
+        return self.ready
+        
+    def get_status(self) -> dict:
+        """获取组件状态"""
+        return {
+            'ready': self.ready,
+            'entry_count': len(self.entries),
+            'has_word_vectors': self.word_vectors is not None
         }

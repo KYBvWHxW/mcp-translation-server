@@ -20,6 +20,35 @@ wheels/
 .installed.cfg
 *.egg
 
+# Sensitive Data
+config/secrets.json
+config/api_keys.json
+resources/private_corpus.json
+resources/sensitive_dictionary.json
+resources/user_data.json
+logs/user_queries.log
+
+# Development
+.env
+.venv
+env/
+venv/
+ENV/
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# System
+.DS_Store
+Thumbs.db
+
 # Virtual Environment
 venv/
 ENV/

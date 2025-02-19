@@ -1,7 +1,153 @@
 {
+    "arambi": {
+        "lexical": "做",
+        "word_class": "verb",
+        "suffixes": ["ra", "mbi"],
+        "collocations": ["arambi bithe - 写书"],
+        "senses": [
+            {
+                "meaning": "做、制作",
+                "domain": "一般",
+                "usage": "常用"
+            },
+            {
+                "meaning": "写作",
+                "domain": "文学",
+                "usage": "常用"
+            }
+        ],
+        "examples": [
+            {
+                "text": "bi bithe arambi",
+                "translation": "我写书",
+                "domain": "文学"
+            }
+        ]
+    },
+    "bithe": {
+        "lexical": "书",
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
+        "collocations": ["bithe arambi - 写书", "bithe tacimbi - 读书"],
+        "senses": [
+            {
+                "meaning": "书、文字",
+                "domain": "文学",
+                "usage": "常用"
+            },
+            {
+                "meaning": "文献",
+                "domain": "文学",
+                "usage": "书面"
+            }
+        ],
+        "examples": [
+            {
+                "text": "ere bithe sain",
+                "translation": "这本书好",
+                "domain": "文学"
+            }
+        ]
+    },
+    "amban": {
+        "lexical": "大臣",
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
+        "collocations": ["amba amban - 重要大臣"],
+        "senses": [
+            {
+                "meaning": "大臣",
+                "domain": "政治",
+                "usage": "正式"
+            },
+            {
+                "meaning": "官员",
+                "domain": "政治",
+                "usage": "正式"
+            }
+        ],
+        "examples": [
+            {
+                "text": "amban ji-he",
+                "translation": "大臣来了",
+                "domain": "政治"
+            }
+        ]
+    },
+    "morin": {
+        "lexical": "马",
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
+        "collocations": ["morin yaluha - 骑马"],
+        "senses": [
+            {
+                "meaning": "马",
+                "domain": "动物",
+                "usage": "常用"
+            }
+        ],
+        "examples": [
+            {
+                "text": "morin feksin",
+                "translation": "马跑得快",
+                "domain": "动物"
+            }
+        ]
+    },
+    "tacimbi": {
+        "lexical": "学习",
+        "word_class": "verb",
+        "suffixes": ["ra", "mbi"],
+        "collocations": ["bithe tacimbi - 读书"],
+        "senses": [
+            {
+                "meaning": "学习",
+                "domain": "教育",
+                "usage": "常用"
+            },
+            {
+                "meaning": "研究",
+                "domain": "学术",
+                "usage": "书面"
+            }
+        ],
+        "examples": [
+            {
+                "text": "bi manju gisun tacimbi",
+                "translation": "我学满语",
+                "domain": "教育"
+            }
+        ]
+    },
+    "gisun": {
+        "lexical": "话、语言",
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
+        "collocations": ["gisun gisurembi - 说话"],
+        "senses": [
+            {
+                "meaning": "话、语言",
+                "domain": "语言",
+                "usage": "常用"
+            },
+            {
+                "meaning": "言论",
+                "domain": "语言",
+                "usage": "书面"
+            }
+        ],
+        "examples": [
+            {
+                "text": "ere gisun umesi sain",
+                "translation": "这句话很好",
+                "domain": "语言"
+            }
+        ]
+    },
     "ᡥᠠᡳ": {
         "lexical": "海",
-        "suffixes": [],
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
         "collocations": ["ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ - 海的人"],
         "senses": [
             {
@@ -20,7 +166,8 @@
     },
     "ᠠᠯᡳᠨ": {
         "lexical": "山",
-        "suffixes": [],
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
         "collocations": ["ᠠᠯᡳᠨ ᡳ ᠨᡳᠶᠠᠯᠮᠠ - 山的人"],
         "senses": [
             {
@@ -39,7 +186,8 @@
     },
     "ᡥᡡᠸᠠᠩᡩᡳ": {
         "lexical": "皇帝",
-        "suffixes": [],
+        "word_class": "noun",
+        "suffixes": ["be", "i"],
         "collocations": ["ᡥᡡᠸᠠᠩᡩᡳ ᡳ ᡥᡝᡵᡤᡝᠨ - 皇帝的文字"],
         "senses": [
             {
@@ -55,44 +203,5 @@
                 "domain": "政治"
             }
         ]
-    },
-    "ᠨᡳᠶᠠᠯᠮᠠ": {
-        "lexical": "人",
-        "suffixes": [],
-        "collocations": [],
-        "senses": [
-            {
-                "meaning": "人",
-                "domain": "一般",
-                "usage": "常用"
-            }
-        ],
-        "examples": []
-    },
-    "ᡥᡝᡵᡤᡝᠨ": {
-        "lexical": "文字",
-        "suffixes": [],
-        "collocations": [],
-        "senses": [
-            {
-                "meaning": "文字",
-                "domain": "语言",
-                "usage": "常用"
-            }
-        ],
-        "examples": []
-    },
-    "ᡳ": {
-        "lexical": "的",
-        "suffixes": [],
-        "collocations": [],
-        "senses": [
-            {
-                "meaning": "的",
-                "domain": "语法",
-                "usage": "常用"
-            }
-        ],
-        "examples": []
     }
 }

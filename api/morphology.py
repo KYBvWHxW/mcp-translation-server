@@ -2,6 +2,7 @@ import regex as re
 from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from enum import Enum, auto
+from .base import BaseComponent
 
 class MorphologyError(Exception):
     """形态分析器错误基类"""
@@ -41,7 +42,7 @@ class StemChange:
     suffix: str  # 触发变化的后缀
     rule_id: str  # 应用的规则ID
 
-class ManchuMorphologyAnalyzer:
+class ManchuMorphologyAnalyzer(BaseComponent):
     """满文形态学分析器"""
     
     def __init__(self):
@@ -53,6 +54,8 @@ class ManchuMorphologyAnalyzer:
         self.morpheme_rules = self._load_morpheme_rules()
         # 编译正则表达式
         self._compile_patterns()
+        # 组件状态
+        self.ready = True
         
     def _load_stem_changes(self) -> List[MorphemeRule]:
         """加载词干变化规则"""
@@ -161,6 +164,66 @@ class ManchuMorphologyAnalyzer:
         
         # 创建词根模式（基于满文音节结构）
         self.syllable_re = re.compile(r"[aeiouāēīōū]|[^aeiouāēīōū][aeiouāēīōū]")
+        
+    def _apply_morpheme_rules(self, word: str) -> str:
+        """应用形态素规则
+        
+        Args:
+            word: 输入词形
+            
+        Returns:
+            处理后的词形
+        """
+        # 应用所有规则
+        result = word
+        for rule in sorted(self.morpheme_rules, key=lambda x: x.priority):
+            if re.search(rule.pattern, result):
+                result = re.sub(rule.pattern, rule.replacement, result)
+        return result
+        
+    def _predict_word_class(self, word: str) -> str:
+        """预测词类
+        
+        Args:
+            word: 输入词形
+            
+        Returns:
+            预测的词类
+        """
+        # 基于词形特征进行简单判断
+        if word.endswith('mbi'):
+            return 'verb'
+        elif word.endswith('ngge'):
+            return 'adjective'
+        elif word.endswith('i'):
+            return 'noun'
+        else:
+            return 'unknown'
+            
+    def _check_stem_change(self, stem: str, suffix: str) -> Optional[Dict]:
+        """检查词干变化
+        
+        Args:
+            stem: 词干
+            suffix: 后缀
+            
+        Returns:
+            词干变化信息，如果没有变化则返回None
+        """
+        # 查找匹配的词干变化规则
+        for change in self.stem_changes:
+            if re.search(change.pattern, stem) and suffix in change.replacement:
+                return {
+                    'original': stem,
+                    'modified': re.sub(change.pattern, change.replacement, stem),
+                    'rule': {
+                        'pattern': change.pattern,
+                        'replacement': change.replacement,
+                        'environment': change.environment,
+                        'priority': change.priority
+                    }
+                }
+        return None
     
     def analyze_word(self, word: str) -> Dict:
         """分析单个词的形态结构
@@ -213,9 +276,10 @@ class ManchuMorphologyAnalyzer:
                 if suffix_info:
                     # 验证词类兼容性
                     if result["word_class"] not in suffix_info["word_class"]:
-                        raise AnalysisError(
-                            f"后缀 {suffix} 不能用于词类 {result['word_class']}"
-                        )
+                        # 不是错误，而是警告
+                        result["warnings"] = result.get("warnings", []) + [
+                            f"后缀 {suffix} 通常不用于{result['word_class']}类词"
+                        ]
                     
                     # 检查词干变化
                     stem_change = self._check_stem_change(
@@ -278,3 +342,17 @@ class ManchuMorphologyAnalyzer:
             句子的注释字符串
         """
         return " ".join(self.get_gloss(word) for word in sentence_analysis)
+        
+    def is_ready(self) -> bool:
+        """检查组件是否就绪"""
+        return self.ready and hasattr(self, 'suffix_re') and hasattr(self, 'syllable_re')
+        
+    def get_status(self) -> dict:
+        """获取组件状态"""
+        return {
+            'ready': self.is_ready(),
+            'suffix_count': sum(len(group) for group in self.suffixes.values()),
+            'stem_change_count': len(self.stem_changes),
+            'morpheme_rule_count': len(self.morpheme_rules),
+            'patterns_compiled': hasattr(self, 'suffix_re') and hasattr(self, 'syllable_re')
+        }

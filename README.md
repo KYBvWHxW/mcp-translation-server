@@ -1,54 +1,133 @@
 # MCP Translation Server
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Python](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-supported-blue.svg)](docs/operations.md)
 
 ## Overview
 
-MCP Translation Server is a high-performance machine translation system specialized for Manchu-Chinese translation. It implements the Model Context Protocol (MCP) based on the research paper "Exploring Linguistic Resources for Low-Resource Machine Translation with Large Language Models: A Case Study on Manchu".
+MCP Translation Server 是一个专门用于满-汉双向翻译的高性能机器翻译系统。它基于先进的语言学处理和深度学习技术，为低资源语言翻译提供全面的解决方案。
 
-## Key Features
+## 主要特性
 
-- 🚀 High-performance translation engine
-- 📚 Comprehensive dictionary support
-- 🔍 Advanced morphological analysis
-- 📖 Grammar-based translation assistance
-- 💾 Efficient caching system
-- 📊 Real-time performance monitoring
-- 🔄 Parallel processing support
-- 🎯 High accuracy with context awareness
+### 1. 增强型形态分析
+- 🔍 完整的满语语言规则支持
+- 🎯 精确的元音和谐分析
+- 📊 智能词形变化预测
+- ✨ 自动错误检测和纠正
 
-## Quick Start
+### 2. 高级翻译引擎
+- 🚀 多级翻译策略
+- 📚 智能语料库匹配
+- 🔄 形态分析集成
+- 📊 详细翻译元数据
 
-### Using Docker (Recommended)
+### 3. 丰富的语言资源
+- 📖 完整的语言规则系统
+- 💾 扩展的平行语料库
+- 📚 优化的词典结构
+- 🔍 上下文感知分析
 
+## 快速开始
+
+### 1. 克隆仓库
 ```bash
-# Clone the repository
 git clone https://github.com/yourusername/mcp-translation-server.git
 cd mcp-translation-server
-
-# Start services using Docker Compose
-docker-compose up -d
 ```
 
-### Manual Setup
-
-1. Create and activate virtual environment:
+### 2. 环境设置
 ```bash
+# 创建虚拟环境
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or
-venv\Scripts\activate  # Windows
-```
 
-2. Install dependencies:
-```bash
+# 激活虚拟环境
+source venv/bin/activate  # Linux/Mac
+# 或
+venv\Scripts\activate    # Windows
+
+# 安装依赖
 pip install -r requirements.txt
 ```
 
-3. Configure the server:
+### 3. 配置
 ```bash
+# 复制配置模板
+cp config/config.example.json config/config.json
+
+# 编辑配置文件
+vim config/config.json  # 或使用其他编辑器
+```
+
+### 4. 运行演示
+```bash
+# 运行综合演示
+python demo/comprehensive_demo.py
+
+# 运行翻译服务器
+python server.py
+```
+
+## 系统架构
+
+### 核心组件
+1. **形态分析器** (`enhanced_morphology.py`)
+   - 词形分析和生成
+   - 元音和谐处理
+   - 错误检测和纠正
+
+2. **翻译引擎** (`enhanced_translation.py`)
+   - 多级翻译策略
+   - 语料库匹配
+   - 形态分析集成
+
+3. **语言资源**
+   - 语言规则 (`manchu_rules.json`)
+   - 平行语料库 (`parallel_corpus.json`)
+   - 词典系统 (`dictionary.json`)
+
+## API 文档
+
+### 基本翻译
+```python
+POST /api/v1/translate
+Content-Type: application/json
+
+{
+    "text": "bi bithe arambi",
+    "source_lang": "manchu",
+    "target_lang": "chinese"
+}
+```
+
+### 形态分析
+```python
+POST /api/v1/analyze
+Content-Type: application/json
+
+{
+    "text": "arambi",
+    "type": "morphology"
+}
+```
+
+## 贡献指南
+
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 开启 Pull Request
+
+## 许可证
+
+本项目采用 MIT 许可证。详见 [LICENSE](LICENSE) 文件。
+
+## 致谢
+
+- 感谢所有为满语研究做出贡献的学者
+- 感谢开源社区的支持
+- 特别感谢为本项目提供语料和建议的专家们
 # Copy example configuration file
 cp config.example.py config.py
 
