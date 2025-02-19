@@ -1,0 +1,54 @@
+{
+    "bi": {
+        "word_class": "pronoun",
+        "features": ["first_person", "singular", "nominative"],
+        "morphemes": [
+            {
+                "form": "bi",
+                "type": "root",
+                "features": ["first_person", "singular"],
+                "gloss": "1SG"
+            }
+        ],
+        "gloss": "I"
+    },
+    "bithe": {
+        "word_class": "noun",
+        "features": ["common", "inanimate"],
+        "morphemes": [
+            {
+                "form": "bithe",
+                "type": "root",
+                "features": ["common", "inanimate"],
+                "gloss": "book"
+            }
+        ],
+        "gloss": "book"
+    },
+    "ara": {
+        "word_class": "verb",
+        "features": ["transitive", "action"],
+        "morphemes": [
+            {
+                "form": "ara",
+                "type": "root",
+                "features": ["transitive", "action"],
+                "gloss": "write"
+            }
+        ],
+        "gloss": "write"
+    },
+    "sain": {
+        "word_class": "adjective",
+        "features": ["qualitative", "attributive"],
+        "morphemes": [
+            {
+                "form": "sain",
+                "type": "root",
+                "features": ["qualitative"],
+                "gloss": "good"
+            }
+        ],
+        "gloss": "good"
+    }
+}

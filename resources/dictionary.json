@@ -1,0 +1,98 @@
+{
+    "ᡥᠠᡳ": {
+        "lexical": "海",
+        "suffixes": [],
+        "collocations": ["ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ - 海的人"],
+        "senses": [
+            {
+                "meaning": "海",
+                "domain": "地理",
+                "usage": "常用"
+            }
+        ],
+        "examples": [
+            {
+                "text": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                "translation": "海的人",
+                "domain": "一般"
+            }
+        ]
+    },
+    "ᠠᠯᡳᠨ": {
+        "lexical": "山",
+        "suffixes": [],
+        "collocations": ["ᠠᠯᡳᠨ ᡳ ᠨᡳᠶᠠᠯᠮᠠ - 山的人"],
+        "senses": [
+            {
+                "meaning": "山",
+                "domain": "地理",
+                "usage": "常用"
+            }
+        ],
+        "examples": [
+            {
+                "text": "ᠠᠯᡳᠨ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                "translation": "山的人",
+                "domain": "一般"
+            }
+        ]
+    },
+    "ᡥᡡᠸᠠᠩᡩᡳ": {
+        "lexical": "皇帝",
+        "suffixes": [],
+        "collocations": ["ᡥᡡᠸᠠᠩᡩᡳ ᡳ ᡥᡝᡵᡤᡝᠨ - 皇帝的文字"],
+        "senses": [
+            {
+                "meaning": "皇帝",
+                "domain": "政治",
+                "usage": "正式"
+            }
+        ],
+        "examples": [
+            {
+                "text": "ᡥᡡᠸᠠᠩᡩᡳ ᡳ ᡥᡝᡵᡤᡝᠨ",
+                "translation": "皇帝的文字",
+                "domain": "政治"
+            }
+        ]
+    },
+    "ᠨᡳᠶᠠᠯᠮᠠ": {
+        "lexical": "人",
+        "suffixes": [],
+        "collocations": [],
+        "senses": [
+            {
+                "meaning": "人",
+                "domain": "一般",
+                "usage": "常用"
+            }
+        ],
+        "examples": []
+    },
+    "ᡥᡝᡵᡤᡝᠨ": {
+        "lexical": "文字",
+        "suffixes": [],
+        "collocations": [],
+        "senses": [
+            {
+                "meaning": "文字",
+                "domain": "语言",
+                "usage": "常用"
+            }
+        ],
+        "examples": []
+    },
+    "ᡳ": {
+        "lexical": "的",
+        "suffixes": [],
+        "collocations": [],
+        "senses": [
+            {
+                "meaning": "的",
+                "domain": "语法",
+                "usage": "常用"
+            }
+        ],
+        "examples": []
+    }
+}

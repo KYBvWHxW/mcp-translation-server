@@ -1,0 +1,96 @@
+{
+    "boo": {
+        "word_class": "noun",
+        "features": ["common", "inanimate", "location"],
+        "morphemes": [
+            {
+                "form": "boo",
+                "type": "root",
+                "features": ["common", "inanimate"],
+                "gloss": "house"
+            }
+        ],
+        "gloss": "house",
+        "semantic_domain": "buildings",
+        "register": "common"
+    },
+    "gucu": {
+        "word_class": "noun",
+        "features": ["common", "animate", "human"],
+        "morphemes": [
+            {
+                "form": "gucu",
+                "type": "root",
+                "features": ["common", "animate"],
+                "gloss": "friend"
+            }
+        ],
+        "gloss": "friend",
+        "semantic_domain": "social_relations",
+        "register": "common"
+    },
+    "gene": {
+        "word_class": "verb",
+        "features": ["motion", "intransitive"],
+        "morphemes": [
+            {
+                "form": "gene",
+                "type": "root",
+                "features": ["motion"],
+                "gloss": "go"
+            }
+        ],
+        "gloss": "go",
+        "semantic_domain": "motion",
+        "register": "common",
+        "valency": 1
+    },
+    "ji": {
+        "word_class": "verb",
+        "features": ["motion", "intransitive"],
+        "morphemes": [
+            {
+                "form": "ji",
+                "type": "root",
+                "features": ["motion"],
+                "gloss": "come"
+            }
+        ],
+        "gloss": "come",
+        "semantic_domain": "motion",
+        "register": "common",
+        "valency": 1
+    },
+    "onggolo": {
+        "word_class": "postposition",
+        "features": ["temporal", "anterior"],
+        "morphemes": [
+            {
+                "form": "onggolo",
+                "type": "root",
+                "features": ["temporal"],
+                "gloss": "before"
+            }
+        ],
+        "gloss": "before",
+        "semantic_domain": "time",
+        "register": "common",
+        "requires_genitive": true
+    },
+    "dolo": {
+        "word_class": "postposition",
+        "features": ["spatial", "interior"],
+        "morphemes": [
+            {
+                "form": "dolo",
+                "type": "root",
+                "features": ["spatial"],
+                "gloss": "inside"
+            }
+        ],
+        "gloss": "inside",
+        "semantic_domain": "space",
+        "register": "common",
+        "requires_genitive": true
+    }
+}

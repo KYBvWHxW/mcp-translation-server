@@ -1,0 +1,52 @@
+{
+    "rules": [
+        {
+            "rule_id": "VERB001",
+            "word_class": "verb",
+            "pattern": "(.+)mbi$",
+            "replacement": "\\1",
+            "conditions": ["is_verb_stem"],
+            "features": ["present", "indicative", "finite"],
+            "priority": 10,
+            "examples": [
+                {
+                    "input": "arambi",
+                    "output": "ara",
+                    "gloss": "write-PRES"
+                }
+            ]
+        },
+        {
+            "rule_id": "VERB002",
+            "word_class": "verb",
+            "pattern": "(.+)ha$",
+            "replacement": "\\1",
+            "conditions": ["is_verb_stem"],
+            "features": ["past", "finite"],
+            "priority": 10,
+            "examples": [
+                {
+                    "input": "araha",
+                    "output": "ara",
+                    "gloss": "write-PAST"
+                }
+            ]
+        },
+        {
+            "rule_id": "NOUN001",
+            "word_class": "noun",
+            "pattern": "(.+)be$",
+            "replacement": "\\1",
+            "conditions": ["is_noun"],
+            "features": ["accusative"],
+            "priority": 8,
+            "examples": [
+                {
+                    "input": "bithebe",
+                    "output": "bithe",
+                    "gloss": "book-ACC"
+                }
+            ]
+        }
+    ]
+}

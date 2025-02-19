@@ -1,0 +1,68 @@
+{
+    "rules": [
+        {
+            "rule_id": "VERB003",
+            "word_class": "verb",
+            "pattern": "(.+)mbihe$",
+            "replacement": "\\1",
+            "conditions": ["is_verb_stem"],
+            "features": ["past", "imperfect", "finite"],
+            "priority": 9,
+            "examples": [
+                {
+                    "input": "arambihe",
+                    "output": "ara",
+                    "gloss": "write-IMPF"
+                }
+            ]
+        },
+        {
+            "rule_id": "VERB004",
+            "word_class": "verb",
+            "pattern": "(.+)fi$",
+            "replacement": "\\1",
+            "conditions": ["is_verb_stem"],
+            "features": ["converb", "sequential"],
+            "priority": 8,
+            "examples": [
+                {
+                    "input": "arafi",
+                    "output": "ara",
+                    "gloss": "write-CVB"
+                }
+            ]
+        },
+        {
+            "rule_id": "NOUN002",
+            "word_class": "noun",
+            "pattern": "(.+)de$",
+            "replacement": "\\1",
+            "conditions": ["is_noun"],
+            "features": ["dative", "locative"],
+            "priority": 8,
+            "examples": [
+                {
+                    "input": "boode",
+                    "output": "boo",
+                    "gloss": "house-DAT/LOC"
+                }
+            ]
+        },
+        {
+            "rule_id": "NOUN003",
+            "word_class": "noun",
+            "pattern": "(.+)i$",
+            "replacement": "\\1",
+            "conditions": ["is_noun"],
+            "features": ["genitive"],
+            "priority": 8,
+            "examples": [
+                {
+                    "input": "gucui",
+                    "output": "gucu",
+                    "gloss": "friend-GEN"
+                }
+            ]
+        }
+    ]
+}

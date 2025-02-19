@@ -1,0 +1,40 @@
+[
+    {
+        "word": "ᡥᠠᡳ",
+        "lexical": "名词",
+        "suffixes": ["i", "be"],
+        "collocations": ["ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ"],
+        "senses": [
+            {
+                "meaning": "海",
+                "pos": "名词",
+                "domain": "地理"
+            }
+        ],
+        "examples": [
+            {
+                "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                "chinese": "海的人"
+            }
+        ]
+    },
+    {
+        "word": "ᠨᡳᠶᠠᠯᠮᠠ",
+        "lexical": "名词",
+        "suffixes": ["i", "be"],
+        "collocations": ["ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ"],
+        "senses": [
+            {
+                "meaning": "人",
+                "pos": "名词",
+                "domain": "人类"
+            }
+        ],
+        "examples": [
+            {
+                "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                "chinese": "海的人"
+            }
+        ]
+    }
+]

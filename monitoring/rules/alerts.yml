@@ -1,0 +1,47 @@
+groups:
+- name: translation-server
+  rules:
+  - alert: HighLatency
+    expr: histogram_quantile(0.95, rate(translation_request_duration_seconds_bucket[5m])) > 2
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High translation latency
+      description: 95th percentile latency is above 2 seconds
+
+  - alert: HighErrorRate
+    expr: rate(translation_errors_total[5m]) > 0.1
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: High error rate
+      description: Error rate is above 10%
+
+  - alert: LowCacheHitRate
+    expr: rate(cache_hits_total[5m]) / rate(cache_requests_total[5m]) < 0.5
+    for: 15m
+    labels:
+      severity: warning
+    annotations:
+      summary: Low cache hit rate
+      description: Cache hit rate is below 50%
+
+  - alert: HighMemoryUsage
+    expr: process_resident_memory_bytes / process_virtual_memory_bytes > 0.8
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High memory usage
+      description: Memory usage is above 80%
+
+  - alert: HighCPUUsage
+    expr: rate(process_cpu_seconds_total[5m]) > 0.8
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: High CPU usage
+      description: CPU usage is above 80%

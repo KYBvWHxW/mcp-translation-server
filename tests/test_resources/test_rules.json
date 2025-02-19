@@ -1,0 +1,74 @@
+{
+    "version": "1.0",
+    "rules": [
+        {
+            "id": "noun_phrase",
+            "pattern": "NOUN i NOUN",
+            "structure": {
+                "subject": "$1",
+                "particle": "i",
+                "object": "$2"
+            },
+            "transformation": {
+                "chinese": "$2的$1"
+            },
+            "examples": [
+                {
+                    "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                    "chinese": "海的人"
+                }
+            ]
+        },
+        {
+            "id": "verb_phrase",
+            "pattern": "NOUN be VERB",
+            "structure": {
+                "subject": "$1",
+                "particle": "be",
+                "predicate": "$2"
+            },
+            "transformation": {
+                "chinese": "$2$1"
+            },
+            "examples": []
+        },
+        {
+            "id": "adjective_phrase",
+            "pattern": "ADJ NOUN",
+            "structure": {
+                "modifier": "$1",
+                "head": "$2"
+            },
+            "transformation": {
+                "chinese": "$1的$2"
+            },
+            "examples": []
+        }
+    ],
+    "morphology": {
+        "case_markers": [
+            {
+                "marker": "i",
+                "function": "genitive",
+                "chinese": "的"
+            },
+            {
+                "marker": "be",
+                "function": "accusative",
+                "chinese": ""
+            }
+        ],
+        "verb_endings": [
+            {
+                "ending": "mbi",
+                "tense": "present",
+                "chinese": "着"
+            },
+            {
+                "ending": "habi",
+                "tense": "perfect",
+                "chinese": "了"
+            }
+        ]
+    }
+}

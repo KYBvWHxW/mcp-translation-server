@@ -1,0 +1,100 @@
+{
+    "terms": [
+        {
+            "source": "boo",
+            "target": "房子",
+            "pos": "noun",
+            "domain": "buildings",
+            "register": "common",
+            "variants": ["booi", "boodari"],
+            "context": "建筑物",
+            "notes": "常用词，可用于各种场合"
+        },
+        {
+            "source": "gucu",
+            "target": "朋友",
+            "pos": "noun",
+            "domain": "social_relations",
+            "register": "common",
+            "variants": ["gucuse"],
+            "context": "社交关系",
+            "notes": "表示朋友、伙伴的关系"
+        },
+        {
+            "source": "gene",
+            "target": "去",
+            "pos": "verb",
+            "domain": "motion",
+            "register": "common",
+            "variants": ["genehe", "genembi"],
+            "context": "位移动作",
+            "notes": "表示离开说话者的动作"
+        },
+        {
+            "source": "ji",
+            "target": "来",
+            "pos": "verb",
+            "domain": "motion",
+            "register": "common",
+            "variants": ["jihe", "jimbi"],
+            "context": "位移动作",
+            "notes": "表示朝向说话者的动作"
+        },
+        {
+            "source": "onggolo",
+            "target": "之前",
+            "pos": "postposition",
+            "domain": "time",
+            "register": "common",
+            "variants": [],
+            "context": "时间关系",
+            "notes": "表示时间上的先后关系"
+        },
+        {
+            "source": "dolo",
+            "target": "里面",
+            "pos": "postposition",
+            "domain": "space",
+            "register": "common",
+            "variants": [],
+            "context": "空间关系",
+            "notes": "表示空间位置关系"
+        },
+        {
+            "source": "bithe",
+            "target": "书",
+            "pos": "noun",
+            "domain": "objects",
+            "register": "common",
+            "variants": ["bithei", "bithebe"],
+            "context": "文字、书籍",
+            "notes": "也可以表示'文件'、'文书'"
+        },
+        {
+            "source": "ara",
+            "target": "写",
+            "pos": "verb",
+            "domain": "action",
+            "register": "common",
+            "variants": ["arambi", "araha"],
+            "context": "书写动作",
+            "notes": "表示写作、书写的动作"
+        }
+    ],
+    "metadata": {
+        "version": "1.0",
+        "last_updated": "2025-02-18",
+        "source_language": "manchu",
+        "target_language": "chinese",
+        "total_terms": 8,
+        "domains": [
+            "buildings",
+            "social_relations",
+            "motion",
+            "time",
+            "space",
+            "objects",
+            "action"
+        ]
+    }
+}

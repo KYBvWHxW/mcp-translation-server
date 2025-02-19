@@ -1,0 +1,47 @@
+[
+    {
+        "manchu": "wede hvlhame gamabuha be inu sarkv",
+        "english": "I don't know who stole it",
+        "gloss": "who-DAT steal-SIM take-PASS-PAST ACC also know-NEG",
+        "features": ["interrogative", "passive_voice", "converb_me", "negation"],
+        "domain": "general",
+        "difficulty": 0.8,
+        "quality": 1.0
+    },
+    {
+        "manchu": "amban hafan be tucibuhe",
+        "english": "appointed a high official",
+        "gloss": "high official ACC appoint-PAST",
+        "features": ["accusative_case", "past_tense", "transitive"],
+        "domain": "politics",
+        "difficulty": 0.5,
+        "quality": 1.0
+    },
+    {
+        "manchu": "ere gisun be sarkv",
+        "english": "don't know these words",
+        "gloss": "this word ACC know-NEG",
+        "features": ["demonstrative", "accusative_case", "negation", "present_tense"],
+        "domain": "language",
+        "difficulty": 0.4,
+        "quality": 1.0
+    },
+    {
+        "manchu": "bi uthai jimbi",
+        "english": "I am coming right away",
+        "gloss": "I immediately come-IMPF",
+        "features": ["pronoun_subject", "adverb", "imperfective"],
+        "domain": "general",
+        "difficulty": 0.3,
+        "quality": 1.0
+    },
+    {
+        "manchu": "tere niyalma be sabuha",
+        "english": "saw that person",
+        "gloss": "that person ACC see-PAST",
+        "features": ["demonstrative", "accusative_case", "past_tense", "transitive"],
+        "domain": "general",
+        "difficulty": 0.4,
+        "quality": 1.0
+    }
+]

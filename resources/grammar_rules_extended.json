@@ -1,0 +1,84 @@
+{
+    "rules": [
+        {
+            "rule_id": "WO003",
+            "type": "word_order",
+            "category": "subordinate_clause",
+            "features": ["subordinate", "temporal"],
+            "patterns": [
+                {
+                    "pattern": "TEMP-CLAUSE MAIN-CLAUSE",
+                    "constraints": {
+                        "TEMP-CLAUSE": "temporal_subordinate",
+                        "MAIN-CLAUSE": "main_clause"
+                    }
+                }
+            ],
+            "conditions": ["has_temporal_marker"],
+            "transformations": ["reorder_temporal_clause"],
+            "priority": 8,
+            "bidirectional": true,
+            "examples": [
+                {
+                    "manchu": "mini jidere onggolo, si gene",
+                    "chinese": "在我来之前，你先走",
+                    "explanation": "时间从句在主句前"
+                }
+            ],
+            "notes": "满语中时间从句通常位于主句前"
+        },
+        {
+            "rule_id": "WO004",
+            "type": "word_order",
+            "category": "postposition",
+            "features": ["postposition", "location"],
+            "patterns": [
+                {
+                    "pattern": "NP POST",
+                    "constraints": {
+                        "NP": "noun_phrase",
+                        "POST": "postposition"
+                    }
+                }
+            ],
+            "conditions": ["is_location_phrase"],
+            "transformations": ["reorder_postposition"],
+            "priority": 9,
+            "bidirectional": true,
+            "examples": [
+                {
+                    "manchu": "jai boo i dolo",
+                    "chinese": "在房子里",
+                    "explanation": "后置词位于名词短语后"
+                }
+            ],
+            "notes": "满语中后置词跟随其修饰的名词短语"
+        },
+        {
+            "rule_id": "MORPH001",
+            "type": "morphological",
+            "category": "case_marking",
+            "features": ["case", "genitive"],
+            "patterns": [
+                {
+                    "pattern": "N-i",
+                    "constraints": {
+                        "N": "noun"
+                    }
+                }
+            ],
+            "conditions": ["is_possessor"],
+            "transformations": ["add_genitive_case"],
+            "priority": 7,
+            "bidirectional": true,
+            "examples": [
+                {
+                    "manchu": "gucu i bithe",
+                    "chinese": "朋友的书",
+                    "explanation": "属格标记 -i"
+                }
+            ],
+            "notes": "满语中属格通过后缀 -i 标记"
+        }
+    ]
+}

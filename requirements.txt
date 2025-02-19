@@ -1,0 +1,17 @@
+flask>=3.0.0
+transformers>=4.36.0
+torch>=2.1.0
+sacrebleu>=2.3.0
+sentencepiece>=0.1.99
+nltk>=3.8.1
+spacy>=3.7.2
+regex>=2023.10.3
+Levenshtein>=0.25.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+rank-bm25>=0.2.2
+psutil>=5.9.0
+jinja2>=3.0.0
+matplotlib>=3.5.0
+seaborn>=0.12.0
+joblib>=1.1.0

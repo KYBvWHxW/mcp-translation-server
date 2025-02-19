@@ -1,0 +1,29 @@
+[
+    {
+        "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+        "english": "person of the sea",
+        "gloss": "hai i niyalma",
+        "features": ["noun_phrase", "possessive"],
+        "domain": "general",
+        "difficulty": 0.3,
+        "quality": 0.9
+    },
+    {
+        "manchu": "ᠪᡳᡨᡥᡝ ᠪᡝ ᡨᡠᠸᠠ",
+        "english": "read the book",
+        "gloss": "bithe be tuwa",
+        "features": ["verb_phrase", "accusative"],
+        "domain": "education",
+        "difficulty": 0.4,
+        "quality": 0.95
+    },
+    {
+        "manchu": "ᠰᠠᡳᠨ ᠨᡳᠶᠠᠯᠮᠠ",
+        "english": "good person",
+        "gloss": "sain niyalma",
+        "features": ["adjective_phrase", "modifier"],
+        "domain": "general",
+        "difficulty": 0.2,
+        "quality": 0.9
+    }
+]

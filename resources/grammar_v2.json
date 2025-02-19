@@ -1,0 +1,65 @@
+{
+    "rules": [
+        {
+            "rule_id": "WO001",
+            "type": "word_order",
+            "category": "basic_order",
+            "features": ["subject", "object", "verb"],
+            "patterns": [
+                {
+                    "pattern": "S O V",
+                    "constraints": {
+                        "S": "nominal",
+                        "O": "nominal",
+                        "V": "finite"
+                    }
+                }
+            ],
+            "conditions": ["is_main_clause"],
+            "transformations": ["reorder_sov"],
+            "priority": 10,
+            "bidirectional": true,
+            "examples": [
+                {
+                    "manchu": "bi bithe be arambi",
+                    "chinese": "我写书",
+                    "explanation": "基本SOV语序示例"
+                }
+            ],
+            "notes": "满语基本语序为SOV（主宾谓）",
+            "prerequisites": [],
+            "conflicts": [],
+            "overrides": []
+        },
+        {
+            "rule_id": "WO002",
+            "type": "word_order",
+            "category": "modifier_order",
+            "features": ["adjective", "noun"],
+            "patterns": [
+                {
+                    "pattern": "Adj N",
+                    "constraints": {
+                        "Adj": "attributive",
+                        "N": "nominal"
+                    }
+                }
+            ],
+            "conditions": ["is_noun_phrase"],
+            "transformations": ["reorder_adj_n"],
+            "priority": 8,
+            "bidirectional": true,
+            "examples": [
+                {
+                    "manchu": "sain bithe",
+                    "chinese": "好书",
+                    "explanation": "形容词修饰语序"
+                }
+            ],
+            "notes": "形容词在名词前",
+            "prerequisites": [],
+            "conflicts": [],
+            "overrides": []
+        }
+    ]
+}

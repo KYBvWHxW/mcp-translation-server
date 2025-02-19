@@ -1,0 +1,75 @@
+{
+    "rules": [
+        {
+            "id": "noun_phrase",
+            "category": "句法",
+            "features": ["名词短语", "所有格"],
+            "patterns": ["NOUN i NOUN"],
+            "short": "名词所有格结构",
+            "long": "满语中表示所属关系的结构，使用助词'i'连接两个名词",
+            "examples": [
+                {
+                    "manchu": "ᡥᠠᡳ ᡳ ᠨᡳᠶᠠᠯᠮᠠ",
+                    "chinese": "海的人"
+                }
+            ],
+            "importance": 1.0
+        },
+        {
+            "id": "verb_phrase",
+            "category": "句法",
+            "features": ["动词短语", "宾格"],
+            "patterns": ["NOUN be VERB"],
+            "short": "动词宾语结构",
+            "long": "满语中表示动作和受事的结构，使用助词'be'标记宾语",
+            "examples": [
+                {
+                    "manchu": "bithe be tuwa",
+                    "chinese": "看书"
+                }
+            ],
+            "importance": 1.0
+        },
+        {
+            "id": "adjective_phrase",
+            "category": "句法",
+            "features": ["形容词短语", "修饰语"],
+            "patterns": ["ADJ NOUN"],
+            "short": "形容词修饰结构",
+            "long": "满语中形容词修饰名词的结构，形容词直接位于名词前",
+            "examples": [
+                {
+                    "manchu": "sain niyalma",
+                    "chinese": "好人"
+                }
+            ],
+            "importance": 1.0
+        }
+    ],
+    "morphology": {
+        "case_markers": [
+            {
+                "marker": "i",
+                "function": "所有格",
+                "chinese": "的"
+            },
+            {
+                "marker": "be",
+                "function": "宾格",
+                "chinese": ""
+            }
+        ],
+        "verb_endings": [
+            {
+                "ending": "mbi",
+                "tense": "现在时",
+                "chinese": "着"
+            },
+            {
+                "ending": "habi",
+                "tense": "完成时",
+                "chinese": "了"
+            }
+        ]
+    }
+}
