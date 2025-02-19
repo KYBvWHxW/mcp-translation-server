@@ -104,6 +104,8 @@ except requests.exceptions.HTTPError as e:
 
 ## Performance Optimization Examples
 
+### 1. Parallel Processing
+
 ```python
 from concurrent.futures import ThreadPoolExecutor
 import time
@@ -117,4 +119,179 @@ texts = ['text1', 'text2', 'text3', 'text4', 'text5']
 # Parallel translation
 with ThreadPoolExecutor(max_workers=3) as executor:
     results = list(executor.map(translate_text, texts))
+```
+
+### 2. Batch Processing with Context
+
+```python
+# Batch translation with context
+batch_data = [
+    {'text': 'amba moo i baru', 'context': 'direction'},
+    {'text': 'amba boo', 'context': 'building'},
+    {'text': 'amba niyalma', 'context': 'person'}
+]
+
+response = requests.post('http://localhost:8080/batch_translate',
+                        json={'texts': batch_data})
+
+for result in response.json()['translations']:
+    print(f"Original: {result['original']}")
+    print(f"Translation: {result['translation']}")
+    print(f"Context: {result['context']}\n")
+```
+
+### 3. Caching Strategy
+
+```python
+from datetime import datetime
+
+def translate_with_cache(text, context=None):
+    # Add timestamp for cache control
+    cache_key = f"{text}:{context}:{datetime.now().strftime('%Y%m%d')}"
+    
+    response = requests.post('http://localhost:8080/translate',
+                           json={
+                               'text': text,
+                               'context': context,
+                               'cache_key': cache_key
+                           },
+                           headers={'Cache-Control': 'max-age=3600'})
+    return response.json()
+
+# First call will be cached
+result1 = translate_with_cache('amba moo', 'nature')
+
+# Second call will use cache
+result2 = translate_with_cache('amba moo', 'nature')
+```
+
+## Real-world Usage Examples
+
+### 1. Document Translation
+
+```python
+def translate_document(file_path):
+    # Read document content
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Split into paragraphs
+    paragraphs = content.split('\n\n')
+    
+    # Translate each paragraph with context
+    translations = []
+    for i, para in enumerate(paragraphs):
+        response = requests.post('http://localhost:8080/translate',
+                               json={
+                                   'text': para,
+                                   'context': f'paragraph_{i}',
+                                   'preserve_format': True
+                               })
+        translations.append(response.json()['translation'])
+    
+    # Combine translations
+    return '\n\n'.join(translations)
+
+# Usage
+translated_doc = translate_document('manchu_text.txt')
+with open('translated_doc.txt', 'w', encoding='utf-8') as f:
+    f.write(translated_doc)
+```
+
+### 2. Interactive Translation
+
+```python
+import tkinter as tk
+from tkinter import ttk
+
+class TranslationApp:
+    def __init__(self, root):
+        self.root = root
+        self.root.title('Manchu Translator')
+        
+        # Input area
+        self.input_text = tk.Text(root, height=5)
+        self.input_text.pack(padx=10, pady=5)
+        
+        # Context selection
+        self.context = ttk.Combobox(root, 
+                                   values=['general', 'historical',
+                                          'literary', 'technical'])
+        self.context.set('general')
+        self.context.pack(pady=5)
+        
+        # Translate button
+        self.translate_btn = tk.Button(root, 
+                                      text='Translate',
+                                      command=self.translate)
+        self.translate_btn.pack(pady=5)
+        
+        # Output area
+        self.output_text = tk.Text(root, height=5)
+        self.output_text.pack(padx=10, pady=5)
+    
+    def translate(self):
+        text = self.input_text.get('1.0', tk.END).strip()
+        context = self.context.get()
+        
+        response = requests.post('http://localhost:8080/translate',
+                               json={
+                                   'text': text,
+                                   'context': context
+                               })
+        
+        result = response.json()
+        self.output_text.delete('1.0', tk.END)
+        self.output_text.insert('1.0', result['translation'])
+
+# Run the app
+root = tk.Tk()
+app = TranslationApp(root)
+root.mainloop()
+```
+
+### 3. API Integration Example
+
+```python
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+import requests
+
+app = FastAPI()
+
+class TranslationRequest(BaseModel):
+    text: str
+    source_lang: str = 'manchu'
+    target_lang: str = 'chinese'
+    context: str = None
+
+@app.post('/translate')
+async def translate(request: TranslationRequest):
+    try:
+        # Call MCP Translation Server
+        response = requests.post(
+            'http://localhost:8080/translate',
+            json={
+                'text': request.text,
+                'context': request.context
+            }
+        )
+        response.raise_for_status()
+        
+        result = response.json()
+        
+        # Add additional processing if needed
+        return {
+            'success': True,
+            'translation': result['translation'],
+            'source': request.text,
+            'metadata': {
+                'source_lang': request.source_lang,
+                'target_lang': request.target_lang,
+                'context': request.context
+            }
+        }
+    except requests.exceptions.RequestException as e:
+        raise HTTPException(status_code=500,
+                          detail=str(e))
 ```

@@ -47,10 +47,60 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
-3. Run the server:
+3. Configure the server:
+```bash
+# Copy example configuration file
+cp config.example.py config.py
+
+# Edit config.py with your settings
+vim config.py  # or use your preferred editor
+
+# Set required environment variables
+export MCP_SECRET_KEY="your-secure-random-string"  # Required
+export MCP_API_TOKEN="your-api-token"            # Required
+export MCP_REDIS_PASSWORD="your-redis-password"  # Optional
+export MCP_SMTP_PASSWORD="your-smtp-password"    # Optional
+```
+
+4. Run the server:
 ```bash
 python server.py
 ```
+
+### Configuration
+
+#### Environment Variables
+
+The following environment variables are supported:
+
+| Variable | Required | Description | Example |
+|----------|----------|-------------|----------|
+| `MCP_SECRET_KEY` | Yes | Secret key for session encryption | `openssl rand -hex 32` |
+| `MCP_API_TOKEN` | Yes | API authentication token | `openssl rand -hex 32` |
+| `MCP_REDIS_PASSWORD` | No | Redis server password | `your-redis-password` |
+| `MCP_SMTP_PASSWORD` | No | SMTP server password | `your-smtp-password` |
+
+#### Configuration File
+
+The server can be configured by copying `config.example.py` to `config.py` and editing the values. The configuration file supports:
+
+- API settings (host, port, debug mode)
+- Security settings (secret key, API token)
+- Rate limiting rules
+- Cache configuration
+- Model settings
+- Resource paths
+- Monitoring options
+- Logging configuration
+- Email notifications
+
+**Important Security Notes:**
+
+1. Never commit `config.py` to version control
+2. Use strong, random values for `SECRET_KEY` and `API_TOKEN`
+3. Store sensitive credentials in environment variables
+4. Keep your `.env` file secure and never commit it
+5. Regularly rotate security credentials
 
 ## Documentation
 

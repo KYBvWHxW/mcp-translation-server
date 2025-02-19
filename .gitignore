@@ -60,6 +60,26 @@ resources/cache/
 # Monitoring
 monitoring/data/
 
+# Configuration
+config.py
+*.key
+*.pem
+*.crt
+*.cer
+*.priv
+*.pub
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.truststore
+
+# Secrets and credentials
+.env*
+*.secret
+.credentials/
+.ssh/
+
 # Other
 .DS_Store
 Thumbs.db
